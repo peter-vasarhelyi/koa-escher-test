@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "boar-server": "^2.2.1",
+    "boar-stack": "^0.8.0",
+    "boar-tasks-server": "^3.1.0",
+    "extend": "^3.0.0",
+    "js-stack": "0.0.8",
+    "koa": "^1.1.2",
+    "promise": "^7.1.1",
+    "raw-body": "^2.1.5"
+  }
+}

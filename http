@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+echo "Valid JSON post"
+http -v --auth-type=ems-auth --auth='eu/integration/ems_request/escher_key:escher_secret' \
+ POST http://localhost:3000/ \
+ < escher.json
+
+echo "Valid plain POST"
+http -v --auth-type=ems-auth --auth='eu/integration/ems_request/escher_key:escher_secret' \
+ POST http://localhost:3000/
+
+echo "Valid GET"
+http -v --auth-type=ems-auth --auth='eu/integration/ems_request/escher_key:escher_secret' \
+ GET http://localhost:3000/
+
+echo "Invalid JSON post"
+http  --auth-type=ems-auth --auth='eu/integration/ems_request/escher_key:escher_secret1' \
+ POST http://localhost:3000/ \
+ < escher.json
+
+echo "Invalid plain POST"
+http --auth-type=ems-auth --auth='eu/integration/ems_request/escher_key:escher_secret1' \
+ POST http://localhost:3000/
+
+echo "Invalid GET"
+http --auth-type=ems-auth --auth='eu/integration/ems_request/escher_key:escher_secret1' \
+ GET http://localhost:3000/
